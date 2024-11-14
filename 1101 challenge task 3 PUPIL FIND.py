@@ -12,3 +12,5 @@ with open("students.txt","r") as readFile:
         line = readFile.readline().rstrip('\n')
 userName = input("Hello, what is your name? Enter here: ")
 
+for i in range(len(names)):
+    
