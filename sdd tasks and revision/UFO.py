@@ -23,3 +23,6 @@ def importFile():
 # -------------------------------------------------- DO NOT ALTER -----
 
 thisDate, country, location, shape, description = importFile()
+
+def countSightings():
+    
