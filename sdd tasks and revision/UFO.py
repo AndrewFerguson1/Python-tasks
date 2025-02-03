@@ -9,7 +9,7 @@ shape = []
 description = []
 filePath = '/workspaces/Python-tasks/sdd tasks and revision/'
 
-occurences = 0
+numSightings = 0
 
 # -------------------------------------------------- DO NOT ALTER -----
 def importFile():
@@ -29,4 +29,19 @@ thisDate, country, location, shape, description = importFile()
 def countSightings(country,specifiedCountry):
     for i in range(len(country)):
         if country[i]==specifiedCountry[i]:
-            occurences+=1
+            numSightings+=1
+
+
+
+
+
+
+
+# Main program
+
+# execute read csv, set variables
+thisDate, country, location, shape, description = importFile()
+
+displayedCountries = ["England", "Scoaland", "Wales", "Northern Ireland"]
+for i in range(displayedCountries):
+    
