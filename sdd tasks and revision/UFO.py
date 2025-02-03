@@ -9,6 +9,7 @@ shape = []
 description = []
 filePath = '/workspaces/Python-tasks/sdd tasks and revision/'
 
+UkCountries = ["England", "Scotland", "Wales", "Northern Ireland"]
 numSightings = 0
 
 # -------------------------------------------------- DO NOT ALTER -----
@@ -27,11 +28,14 @@ def importFile():
 thisDate, country, location, shape, description = importFile()
 
 def countSightings(country,specifiedCountry):
+    numSightings = 0
     for i in range(len(country)):
-        if country[i]==specifiedCountry[i]:
+        if country[i]==specifiedCountry:
             numSightings+=1
+    return numSightings
 
-
+def displaySightings(specifiedCountry, numSightings):
+    print(f"There were {numSightings} in {specifiedCountry}.")
 
 
 
@@ -42,6 +46,8 @@ def countSightings(country,specifiedCountry):
 # execute read csv, set variables
 thisDate, country, location, shape, description = importFile()
 
-displayedCountries = ["England", "Scoaland", "Wales", "Northern Ireland"]
-for i in range(displayedCountries):
-    
+# count for a country and print immediately after
+for i in range(len(UkCountries)):
+    num = countSightings(country, UkCountries[i])
+    displaySightings(UkCountries[i], num)
+
