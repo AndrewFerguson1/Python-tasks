@@ -7,7 +7,9 @@ country = []
 location = []
 shape = []
 description = []
-filePath = 'Software Design and Development/RECAP - UFO/'
+filePath = '/workspaces/Python-tasks/sdd tasks and revision/'
+
+occurences = 0
 
 # -------------------------------------------------- DO NOT ALTER -----
 def importFile():
@@ -24,5 +26,7 @@ def importFile():
 
 thisDate, country, location, shape, description = importFile()
 
-def countSightings():
-    
+def countSightings(country,specifiedCountry):
+    for i in range(len(country)):
+        if country[i]==specifiedCountry[i]:
+            occurences+=1
