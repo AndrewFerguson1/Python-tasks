@@ -27,6 +27,7 @@ def importFile():
 
 thisDate, country, location, shape, description = importFile()
 
+# Task 1 functions count and display
 def countSightings(country,specifiedCountry):
     numSightings = 0
     for i in range(len(country)):
@@ -43,10 +44,7 @@ def displaySightings(specifiedCountry, numSightings):
 
 # Main program
 
-# execute read csv, set variables
-thisDate, country, location, shape, description = importFile()
-
-# count for a country and print immediately after
+# Task 1 - count for a country and print immediately after
 for i in range(len(UkCountries)):
     num = countSightings(country, UkCountries[i])
     displaySightings(UkCountries[i], num)
