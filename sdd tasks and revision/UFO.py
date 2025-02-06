@@ -44,14 +44,31 @@ def displaySightings(specifiedCountry, numSightings):
 # Task 2
 def countYearSightings(thisDate):
     numYear = 0
-    thisYear = thisDate[6:10]
-    for i in range(len(thisYear)):
-        if thisYear[i]==thisYear[i+1]:
+    for i in range(len(thisDate)-1):
+        thisYear = thisDate[i][6:10]
+        nextYear = thisDate[i+1][6:10]
+        if thisYear==nextYear:
             numYear+=1
-#        else:
-#            print(f"{thisYear}: {numYear}")
-#            numYear = 0
+        else:
+            print(f"{thisYear}: {numYear}")
+            numYear = 0
 
+
+# Task 3
+def findLocation(location, thisDate, shape, description):
+    specifiedLocation = input("Enter a location to search for: ")
+    counter = 0
+    found = False
+    foundLocation = -1
+    while counter<len(location) and found == False:
+        if location[counter]==specifiedLocation:
+            found = True
+        else:
+            counter+=1
+    if found==True:
+        print(thisDate[counter], shape[counter], description[counter])
+    else:
+        print("Sorry, that location was not found. If you'd like to try another, run again.")
 
 
 
@@ -78,3 +95,6 @@ for i in range(len(UkCountries)):
 # If it doesn't match, display the date and the count, then reset it
 
 countYearSightings(thisDate)
+
+# Task 3 MAIN program
+findLocation(location, thisDate, shape, description)
