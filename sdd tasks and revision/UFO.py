@@ -9,8 +9,8 @@ shape = []
 description = []
 filePath = '/workspaces/Python-tasks/sdd tasks and revision/'
 
-UkCountries = ["England", "Scotland", "Wales", "Northern Ireland"]
 numSightings = 0
+numYear = 0
 
 # -------------------------------------------------- DO NOT ALTER -----
 def importFile():
@@ -27,6 +27,7 @@ def importFile():
 
 thisDate, country, location, shape, description = importFile()
 
+# --------------------------------------------------------------
 # Task 1 functions count and display
 def countSightings(country,specifiedCountry):
     numSightings = 0
@@ -38,14 +39,42 @@ def countSightings(country,specifiedCountry):
 def displaySightings(specifiedCountry, numSightings):
     print(f"There were {numSightings} in {specifiedCountry}.")
 
+# --------------------------------------------------------------
+ 
+# Task 2
+def countYearSightings(thisDate):
+    numYear = 0
+    thisYear = thisDate[6:10]
+    for i in range(len(thisYear)):
+        if thisYear[i]==thisYear[i+1]:
+            numYear+=1
+#        else:
+#            print(f"{thisYear}: {numYear}")
+#            numYear = 0
 
 
 
 
 # Main program
 
+UkCountries = ["England", "Scotland", "Wales", "Northern Ireland"]
+
 # Task 1 - count for a country and print immediately after
 for i in range(len(UkCountries)):
-    num = countSightings(country, UkCountries[i])
-    displaySightings(UkCountries[i], num)
+    numSightings = countSightings(country, UkCountries[i])
+    displaySightings(UkCountries[i], numSightings)
 
+# Task 2 - 
+# CountYearSightings()
+# Count the sightings each year.
+# IN: thisDate [ ]
+# OUT:
+# 
+# Note: the date is stored in the dd/mm/yyyy format,
+# so a sub-string will be required to extract the year.
+# 
+# To implement this function you will be required to look at each date.
+# If a date matches the next date in the array, increment the count by 1.
+# If it doesn't match, display the date and the count, then reset it
+
+countYearSightings(thisDate)
