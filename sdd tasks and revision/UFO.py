@@ -60,15 +60,9 @@ def findLocation(location, thisDate, shape, description):
     counter = 0
     found = False
     foundLocation = -1
-    while counter<len(location) and found == False:
-        if location[counter]==specifiedLocation:
-            found = True
-        else:
-            counter+=1
-    if found==True:
-        print((f"{thisDate[counter]}, {shape[counter]}, {description[counter]}"))
-    else:
-        print("Sorry, that location was not found. If you'd like to try another, run again.")
+    for i in range(len(location)):
+        if location[i]==specifiedLocation:
+            print((f"{thisDate[i]}, {shape[i]}, {description[i]}"))
 
 
 
