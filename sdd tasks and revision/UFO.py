@@ -66,7 +66,7 @@ def findLocation(location, thisDate, shape, description):
         else:
             counter+=1
     if found==True:
-        print(thisDate[counter], shape[counter], description[counter])
+        print((f"{thisDate[counter]}, {shape[counter]}, {description[counter]}"))
     else:
         print("Sorry, that location was not found. If you'd like to try another, run again.")
 
